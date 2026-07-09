@@ -152,7 +152,7 @@ export default function HomePage() {
                   <div className="story__visual-tile story__visual-tile--photo">
                     <Image
                       src="/founders/dominic.jpg"
-                      alt="Dominic Fobi, co-founder of Keldya, photographed in white traditional attire with a beaded crown and coral beads"
+                      alt="Dominic Fobi, co-founder of Keldya, photographed in a navy double-breasted suit with a red lapel pin and gold accents, smiling warmly"
                       fill
                       sizes="(max-width: 900px) 50vw, 280px"
                       style={{ objectFit: "cover", objectPosition: "center top" }}
