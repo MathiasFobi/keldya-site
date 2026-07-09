@@ -73,7 +73,7 @@ export async function POST(req: Request): Promise<NextResponse> {
     // Don't crash in dev — log + return success-shaped error so the
     // user sees something useful instead of a generic 500.
     console.error("[/api/contact] missing RESEND_API_KEY / CONTACT_FROM_EMAIL / CONTACT_TO_EMAIL");
-    return bad("Server is not configured to receive contact submissions yet. Email hello@keldya.com directly.", 503);
+    return bad("Server is not configured to receive contact submissions yet. Email keldyallc@gmail.com directly.", 503);
   }
 
   const subject = `[Keldya] New lead: ${name}${company ? ` (${company})` : ""} — ${projectType}`;
@@ -111,7 +111,7 @@ export async function POST(req: Request): Promise<NextResponse> {
   if (!res.ok) {
     const bodyText = await res.text();
     console.error("[/api/contact] Resend failed:", res.status, bodyText);
-    return bad("Email service is unavailable. Try again or email hello@keldya.com directly.", 502);
+    return bad("Email service is unavailable. Try again or email keldyallc@gmail.com directly.", 502);
   }
 
   return NextResponse.json({ ok: true });
