@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ContactForm } from "./_components/contact-form";
 import { Pillar } from "./_components/pillar";
 
@@ -8,16 +9,14 @@ const PILLARS = [
     name: "TheMediaBox",
     description:
       "QR-enabled event media platforms. Video guest books, print-on-demand table tents, and a B2C storefront — built to capture every guest's moment at the venue and beyond.",
-    href: "https://themediabox-guestbook.fobimathias.workers.dev",
-    external: true,
+    // No href — coming soon, no custom domain yet
     status: { kind: "soon" as const, label: "Coming soon" },
   },
   {
     name: "SMS Notify",
     description:
       "High-reliability SMS notification SaaS for business-to-customer communications. Real-time delivery, sender ID management, and bulk-send workflows at production scale.",
-    href: "https://sms-notify-app.vercel.app",
-    external: true,
+    // No href — coming soon, no custom domain yet
     status: { kind: "soon" as const, label: "Coming soon" },
   },
   {
@@ -122,15 +121,27 @@ export default function HomePage() {
         <section id="story" className="section">
           <div className="container">
             <div className="story">
-              <div className="story__visual" aria-hidden="true">
+              <div className="story__visual" aria-label="Mathias and Dominic Fobi, co-founders of Keldya">
                 <div className="story__visual-grid">
-                  <div className="story__visual-tile story__visual-tile--k">
-                    K
-                    <span className="name">Kelly</span>
+                  <div className="story__visual-tile story__visual-tile--photo">
+                    <Image
+                      src="/founders/mathias.jpg"
+                      alt="Mathias Fobi, co-founder of Keldya, photographed on a university campus in a black jacket and light blue polo"
+                      fill
+                      sizes="(max-width: 900px) 50vw, 280px"
+                      style={{ objectFit: "cover", objectPosition: "center top" }}
+                    />
+                    <span className="name">Mathias Fobi</span>
                   </div>
-                  <div className="story__visual-tile story__visual-tile--d">
-                    D
-                    <span className="name">Dyamon</span>
+                  <div className="story__visual-tile story__visual-tile--photo">
+                    <Image
+                      src="/founders/dominic.jpg"
+                      alt="Dominic Fobi, co-founder of Keldya, photographed in white traditional attire with a beaded crown and coral beads"
+                      fill
+                      sizes="(max-width: 900px) 50vw, 280px"
+                      style={{ objectFit: "cover", objectPosition: "center top" }}
+                    />
+                    <span className="name">Dominic Fobi</span>
                   </div>
                 </div>
               </div>
