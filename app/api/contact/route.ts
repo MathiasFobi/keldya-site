@@ -7,8 +7,15 @@
  *
  * Env (set via Vercel project env vars, not in wrangler):
  *   RESEND_API_KEY
- *   CONTACT_FROM_EMAIL  (the verified sender, e.g. "Keldya <hello@keldya.com>")
- *   CONTACT_TO_EMAIL    (where the lead lands, e.g. "hello@keldya.com")
+ *   CONTACT_FROM_EMAIL  (the verified sender — Gmail until domain is
+ *                        verified, e.g. "Keldya <keldyallc@gmail.com>")
+ *   CONTACT_TO_EMAIL    (where the lead lands — same address until
+ *                        a keldya.com inbox is set up, default
+ *                        keldyallc@gmail.com)
+ *
+ * Until Resend verifies the keldya.com domain (post-domain-purchase),
+ * the only safe values for these vars are the keldyallc@gmail.com
+ * address. Resend's free tier only sends FROM verified addresses.
  *
  * No DB, no analytics — just a clean email. We can add a CRM
  * (Notion, Airtable, HubSpot) later if volume justifies it.

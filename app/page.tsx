@@ -205,7 +205,7 @@ export default function HomePage() {
                     Book a 30-min intro →
                   </a>
                   <a
-                    href="mailto:hello@keldya.com"
+                    href="mailto:keldyallc@gmail.com"
                     className="btn btn--ghost btn--lg"
                   >
                     Or just send an email
@@ -222,7 +222,7 @@ export default function HomePage() {
         <div className="container site-footer__row">
           <span>© {new Date().getFullYear()} Keldya LLC. All rights reserved.</span>
           <span>
-            <a href="mailto:hello@keldya.com">hello@keldya.com</a>
+            <a href="mailto:keldyallc@gmail.com">keldyallc@gmail.com</a>
           </span>
         </div>
       </footer>
