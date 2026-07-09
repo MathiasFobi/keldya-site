@@ -43,8 +43,15 @@ export default function HomePage() {
       <header className="site-header">
         <div className="container site-header__inner">
           <Link href="/" className="brand" aria-label="Keldya home">
-            <span className="brand__mark">K</span>
-            <span>Keldya</span>
+            <Image
+              src="/keldya-logo.jpg"
+              alt="Keldya"
+              width={1280}
+              height={543}
+              priority
+              sizes="160px"
+              className="brand__logo"
+            />
           </Link>
           <nav className="nav" aria-label="Primary">
             <a href="#work">Work</a>
@@ -60,7 +67,16 @@ export default function HomePage() {
         {/* HERO */}
         <section className="hero">
           <div className="container hero__inner">
-            <span className="eyebrow hero__eyebrow">Keldya · A Fobi Brothers Studio</span>
+            <Image
+              src="/keldya-logo.jpg"
+              alt="Keldya LLC — Global Culture, Integrated Futures"
+              width={1280}
+              height={543}
+              priority
+              sizes="(max-width: 900px) 80vw, 520px"
+              className="hero__logo"
+            />
+            <p className="hero__tagline">Global Culture · Integrated Futures</p>
             <h1 className="hero__title">
               Speed. Quality. <span className="accent">Family-built.</span>
             </h1>

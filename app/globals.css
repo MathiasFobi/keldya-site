@@ -186,24 +186,12 @@ p  { margin: 0 0 var(--s-4); color: var(--ink-muted); }
   display: flex;
   align-items: center;
   gap: 10px;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  font-size: var(--fs-sm);
-  text-transform: uppercase;
   color: var(--ink);
 }
-.brand__mark {
-  width: 24px;
-  height: 24px;
+.brand__logo {
+  width: auto;
+  height: 40px;
   border-radius: 4px;
-  background: linear-gradient(135deg, var(--accent), var(--accent-soft));
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--bg);
-  font-size: 14px;
-  font-weight: 800;
-  font-family: ui-serif, Georgia, serif;
 }
 .nav { display: flex; gap: var(--s-6); align-items: center; }
 .nav a {
@@ -230,7 +218,28 @@ p  { margin: 0 0 var(--s-4); color: var(--ink-muted); }
   pointer-events: none;
 }
 .hero__inner { position: relative; text-align: center; }
-.hero__eyebrow { margin-bottom: var(--s-6); }
+.hero__logo {
+  display: block;
+  margin: 0 auto var(--s-6);
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+  border-radius: var(--radius-lg);
+  /* Subtle gold glow that picks up the logo's own gold tones */
+  filter: drop-shadow(0 8px 24px rgba(212, 165, 116, 0.18));
+}
+.hero__tagline {
+  display: inline-block;
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 var(--s-8);
+  padding: 6px 14px;
+  background: var(--accent-bg);
+  border-radius: 999px;
+}
 .hero__title {
   font-size: clamp(2.5rem, 7vw, 5.5rem);
   letter-spacing: -0.04em;
@@ -532,6 +541,8 @@ p  { margin: 0 0 var(--s-4); color: var(--ink-muted); }
   h2 { font-size: var(--fs-2xl); }
   .section { padding: var(--s-16) 0; }
   .hero { padding: var(--s-20) 0 var(--s-16); }
+  .hero__logo { max-width: 360px; }
+  .brand__logo { height: 32px; }
 }
 @media (max-width: 560px) {
   .nav { display: none; }      /* hide on small screens — CTA button still visible */
