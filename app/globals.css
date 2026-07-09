@@ -447,6 +447,138 @@ p  { margin: 0 0 var(--s-4); color: var(--ink-muted); }
   font-family: ui-sans-serif, system-ui, sans-serif;
 }
 
+/* Services ================================================================== */
+.services {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--s-5);
+}
+.service {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: var(--s-6);
+  background: var(--bg-elevated);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  transition: border-color var(--t-base) var(--ease-out),
+              transform var(--t-base) var(--ease-out);
+}
+.service:hover {
+  border-color: var(--line-strong);
+  transform: translateY(-2px);
+}
+.service__badge {
+  position: absolute;
+  top: var(--s-4);
+  right: var(--s-4);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+}
+.service__badge--popular    { background: var(--accent-bg);          color: var(--accent); border-color: rgba(212, 165, 116, 0.30); }
+.service__badge--fast       { background: rgba(74, 222, 128, 0.08);  color: #4ade80;       border-color: rgba(74, 222, 128, 0.25); }
+.service__badge--compliance { background: rgba(96, 165, 250, 0.08);  color: #60a5fa;       border-color: rgba(96, 165, 250, 0.25); }
+
+.service__head { margin-bottom: var(--s-3); padding-right: 120px; }
+.service__name {
+  font-size: var(--fs-lg);
+  font-weight: 600;
+  margin: 0 0 6px;
+  color: var(--ink);
+}
+.service__tagline {
+  margin: 0;
+  font-size: var(--fs-sm);
+  color: var(--accent);
+  font-weight: 500;
+  line-height: 1.4;
+}
+.service__desc {
+  margin: 0 0 var(--s-4);
+  font-size: var(--fs-sm);
+  color: var(--ink-muted);
+  line-height: 1.55;
+}
+.service__deliverables {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 var(--s-5);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.service__deliverables li {
+  position: relative;
+  padding-left: 22px;
+  font-size: var(--fs-sm);
+  color: var(--ink);
+  line-height: 1.5;
+}
+.service__deliverables li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 7px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--accent-bg);
+  border: 1px solid rgba(212, 165, 116, 0.35);
+}
+.service__deliverables li::after {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 10px;
+  width: 6px;
+  height: 3px;
+  border-left: 1.5px solid var(--accent);
+  border-bottom: 1.5px solid var(--accent);
+  transform: rotate(-45deg);
+}
+.service__meta {
+  display: flex;
+  gap: var(--s-6);
+  padding: var(--s-4) 0;
+  border-top: 1px solid var(--line);
+  margin-bottom: var(--s-4);
+}
+.service__meta-row {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.service__meta-label {
+  font-size: var(--fs-xs);
+  font-weight: 500;
+  color: var(--ink-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.service__price {
+  font-size: var(--fs-lg);
+  font-weight: 600;
+  color: var(--ink);
+  font-feature-settings: "tnum";
+}
+.service__duration {
+  font-size: var(--fs-base);
+  color: var(--ink);
+}
+.service__best-for {
+  font-size: var(--fs-sm);
+  font-style: italic;
+  color: var(--ink-muted);
+  margin: 0 0 var(--s-4);
+  line-height: 1.5;
+}
+.service__cta { margin-top: auto; align-self: flex-start; }
+
 /* Now building (AI audio footnote) ========================================= */
 .footnote {
   display: flex;
@@ -548,6 +680,7 @@ p  { margin: 0 0 var(--s-4); color: var(--ink-muted); }
 /* Responsive =============================================================== */
 @media (max-width: 900px) {
   .pillars { grid-template-columns: 1fr; }
+  .services { grid-template-columns: 1fr; }
   .story { grid-template-columns: 1fr; gap: var(--s-10); }
   .contact-grid { grid-template-columns: 1fr; gap: var(--s-8); }
   h1 { font-size: clamp(2.25rem, 9vw, 4rem); }
@@ -556,6 +689,8 @@ p  { margin: 0 0 var(--s-4); color: var(--ink-muted); }
   .hero { padding: var(--s-20) 0 var(--s-16); }
   .hero__logo { max-width: 360px; }
   .brand__logo { height: 32px; }
+  .service__head { padding-right: 0; }
+  .service__badge { position: static; display: inline-block; margin-bottom: var(--s-3); }
 }
 @media (max-width: 560px) {
   .nav { display: none; }      /* hide on small screens — CTA button still visible */

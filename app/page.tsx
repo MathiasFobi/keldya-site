@@ -2,6 +2,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { ContactForm } from "./_components/contact-form";
 import { Pillar } from "./_components/pillar";
+import { ServiceCard } from "./_components/service-card";
+import { SERVICES } from "./_data/services";
 
 /** Single source of truth for the 5 pillars. Edit here, propagates everywhere. */
 const PILLARS = [
@@ -79,13 +81,12 @@ export default function HomePage() {
             <p className="hero__tagline">Global Culture · Integrated Futures</p>
             <h1 className="hero__title">
               <span className="hero__title-line-primary">
-                Custom websites, apps, automations, and fundraising systems
-                for small businesses, nonprofits, and community organizations
-                — fast.
+                Websites, apps, and automations for small businesses,
+                nonprofits, and community organizations.
               </span>
             </h1>
             <p className="hero__brand-line">
-              Family-built. Enterprise-grade. <span className="accent">Shipped in weeks, not months.</span>
+              Family-built. Enterprise-grade. <span className="accent">Built by two brothers.</span>
             </p>
             <p className="hero__lede">
               Keldya is a two-brother studio founded by Mathias and Dominic
@@ -105,6 +106,28 @@ export default function HomePage() {
               <a href="#services" className="btn btn--ghost btn--lg">
                 See how we can help
               </a>
+            </div>
+          </div>
+        </section>
+
+        {/* SERVICES / WAYS WE CAN HELP */}
+        <section id="services" className="section">
+          <div className="container">
+            <header className="section-header">
+              <span className="eyebrow">Ways we can help</span>
+              <h2>Five ways Keldya ships real value — fast.</h2>
+              <p>
+                Every engagement below has a fixed starting price, a real
+                timeline, and a clear scope. Tell us which one matches what
+                you&apos;re trying to do, and we&apos;ll respond within one
+                business day with a tailored quote.
+              </p>
+            </header>
+
+            <div className="services">
+              {SERVICES.map((s) => (
+                <ServiceCard key={s.id} service={s} />
+              ))}
             </div>
           </div>
         </section>
