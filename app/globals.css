@@ -241,11 +241,24 @@ p  { margin: 0 0 var(--s-4); color: var(--ink-muted); }
   border-radius: 999px;
 }
 .hero__title {
-  font-size: clamp(2.5rem, 7vw, 5.5rem);
-  letter-spacing: -0.04em;
-  line-height: 1.02;
-  margin-bottom: var(--s-6);
+  font-size: clamp(1.625rem, 3.5vw, 2.5rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.18;
+  color: var(--ink);
+  margin: 0 auto var(--s-5);
+  max-width: 28ch;
 }
+.hero__title-line-primary { display: block; }
+.hero__brand-line {
+  font-size: clamp(1.25rem, 2.5vw, 1.625rem);
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+  margin: 0 auto var(--s-6);
+  max-width: 38ch;
+}
+.hero__brand-line .accent { color: var(--accent); }
 .hero__title .accent { color: var(--accent); }
 .hero__lede {
   font-size: var(--fs-md);

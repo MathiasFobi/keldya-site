@@ -78,24 +78,32 @@ export default function HomePage() {
             />
             <p className="hero__tagline">Global Culture · Integrated Futures</p>
             <h1 className="hero__title">
-              Speed. Quality. <span className="accent">Family-built.</span>
+              <span className="hero__title-line-primary">
+                Custom websites, apps, automations, and fundraising systems
+                for small businesses, nonprofits, and community organizations
+                — fast.
+              </span>
             </h1>
+            <p className="hero__brand-line">
+              Family-built. Enterprise-grade. <span className="accent">Shipped in weeks, not months.</span>
+            </p>
             <p className="hero__lede">
-              We are Keldya — a high-velocity technology studio engineering
-              digital products, SaaS platforms, and automation ecosystems for
-              everyday enterprises. Premium software, shipped fast.
+              Keldya is a two-brother studio founded by Mathias and Dominic
+              Fobi. We design, build, deploy, and stand behind every
+              system — no outsourcing, no handoffs. You hire Keldya, you
+              get Keldya.
             </p>
             <div className="hero__cta">
-              <a href="#work" className="btn btn--primary btn--lg">
-                Explore our work
-              </a>
               <a
                 href="https://cal.com/kalidllc-b15rre"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn btn--ghost btn--lg"
+                className="btn btn--primary btn--lg"
               >
-                Book a 30-min intro →
+                Book a 30-min strategy call →
+              </a>
+              <a href="#services" className="btn btn--ghost btn--lg">
+                See how we can help
               </a>
             </div>
           </div>
