@@ -56,8 +56,9 @@ export default function HomePage() {
             />
           </Link>
           <nav className="nav" aria-label="Primary">
-            <a href="#work">Work</a>
             <a href="#story">Story</a>
+            <a href="#services">Services</a>
+            <a href="#work">Work</a>
             <a href="#contact" className="btn btn--primary" style={{ padding: "8px 16px" }}>
               Work with us
             </a>
@@ -89,10 +90,8 @@ export default function HomePage() {
               Family-built. Enterprise-grade. <span className="accent">Built by two brothers.</span>
             </p>
             <p className="hero__lede">
-              Keldya is a two-brother studio founded by Mathias and Dominic
-              Fobi. We design, build, deploy, and stand behind every
-              system — no outsourcing, no handoffs. You hire Keldya, you
-              get Keldya.
+              We design, build, deploy, and stand behind every system —
+              no outsourcing, no handoffs. You hire Keldya, you get Keldya.
             </p>
             <div className="hero__cta">
               <a
@@ -106,6 +105,56 @@ export default function HomePage() {
               <a href="#services" className="btn btn--ghost btn--lg">
                 See how we can help
               </a>
+            </div>
+          </div>
+        </section>
+
+        {/* STORY — moved up so the founders are seen before the prices */}
+        <section id="story" className="section">
+          <div className="container">
+            <div className="story">
+              <div className="story__visual" aria-label="Mathias and Dominic Fobi, co-founders of Keldya">
+                <div className="story__visual-grid">
+                  <div className="story__visual-tile story__visual-tile--photo">
+                    <Image
+                      src="/founders/mathias.jpg"
+                      alt="Mathias Fobi, co-founder of Keldya, photographed on a university campus in a black jacket and light blue polo"
+                      fill
+                      sizes="(max-width: 900px) 50vw, 280px"
+                      style={{ objectFit: "cover", objectPosition: "center top" }}
+                    />
+                    <span className="name">Mathias Fobi</span>
+                  </div>
+                  <div className="story__visual-tile story__visual-tile--photo">
+                    <Image
+                      src="/founders/dominic.jpg"
+                      alt="Dominic Fobi, co-founder of Keldya, photographed in a navy double-breasted suit with a red lapel pin and gold accents, smiling warmly"
+                      fill
+                      sizes="(max-width: 900px) 50vw, 280px"
+                      style={{ objectFit: "cover", objectPosition: "center top" }}
+                    />
+                    <span className="name">Dominic Fobi</span>
+                  </div>
+                </div>
+              </div>
+              <div className="story__copy">
+                <span className="eyebrow">Our story</span>
+                <h2 className="story__title">Two women built us. We build for everyone else.</h2>
+                <p>
+                  Keldya is named for the two women who built us. Family is the
+                  foundation — the reason we ship fast, the standard we hold
+                  ourselves to, the gravity that keeps the work honest.
+                </p>
+                <p>
+                  We&apos;re Mathias and Dominic Fobi — two brothers, co-founders,
+                  and the studio&apos;s entire engineering bench. We don&apos;t
+                  outsource the work; we design it, build it, deploy it, and
+                  stand behind it. When you hire Keldya, you get Keldya.
+                </p>
+                <blockquote className="story__quote">
+                  Family-founded. Agility-driven. Enterprise-grade.
+                </blockquote>
+              </div>
             </div>
           </div>
         </section>
@@ -160,56 +209,6 @@ export default function HomePage() {
                 prototyping a self-serve surface. Reach out if you&apos;d like
                 early access.
               </span>
-            </div>
-          </div>
-        </section>
-
-        {/* STORY */}
-        <section id="story" className="section">
-          <div className="container">
-            <div className="story">
-              <div className="story__visual" aria-label="Mathias and Dominic Fobi, co-founders of Keldya">
-                <div className="story__visual-grid">
-                  <div className="story__visual-tile story__visual-tile--photo">
-                    <Image
-                      src="/founders/mathias.jpg"
-                      alt="Mathias Fobi, co-founder of Keldya, photographed on a university campus in a black jacket and light blue polo"
-                      fill
-                      sizes="(max-width: 900px) 50vw, 280px"
-                      style={{ objectFit: "cover", objectPosition: "center top" }}
-                    />
-                    <span className="name">Mathias Fobi</span>
-                  </div>
-                  <div className="story__visual-tile story__visual-tile--photo">
-                    <Image
-                      src="/founders/dominic.jpg"
-                      alt="Dominic Fobi, co-founder of Keldya, photographed in a navy double-breasted suit with a red lapel pin and gold accents, smiling warmly"
-                      fill
-                      sizes="(max-width: 900px) 50vw, 280px"
-                      style={{ objectFit: "cover", objectPosition: "center top" }}
-                    />
-                    <span className="name">Dominic Fobi</span>
-                  </div>
-                </div>
-              </div>
-              <div className="story__copy">
-                <span className="eyebrow">Our story</span>
-                <h2 className="story__title">Two women built us. We build for everyone else.</h2>
-                <p>
-                  Keldya is named for the two women who built us. Family is the
-                  foundation — the reason we ship fast, the standard we hold
-                  ourselves to, the gravity that keeps the work honest.
-                </p>
-                <p>
-                  We&apos;re Mathias and Dominic Fobi — two brothers, co-founders,
-                  and the studio&apos;s entire engineering bench. We don&apos;t
-                  outsource the work; we design it, build it, deploy it, and
-                  stand behind it. When you hire Keldya, you get Keldya.
-                </p>
-                <blockquote className="story__quote">
-                  Family-founded. Agility-driven. Enterprise-grade.
-                </blockquote>
-              </div>
             </div>
           </div>
         </section>
