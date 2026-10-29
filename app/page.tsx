@@ -48,8 +48,8 @@ export default function HomePage() {
             <Image
               src="/keldya-logo.jpg"
               alt="Keldya"
-              width={1280}
-              height={543}
+              width={1179}
+              height={1179}
               priority
               sizes="160px"
               className="brand__logo"
@@ -73,10 +73,10 @@ export default function HomePage() {
             <Image
               src="/keldya-logo.jpg"
               alt="Keldya LLC — Global Culture, Integrated Futures"
-              width={1280}
-              height={543}
+              width={1179}
+              height={1179}
               priority
-              sizes="(max-width: 900px) 80vw, 520px"
+              sizes="(max-width: 900px) 80vw, 400px"
               className="hero__logo"
             />
             <p className="hero__tagline">Global Culture · Integrated Futures</p>
@@ -164,12 +164,12 @@ export default function HomePage() {
           <div className="container">
             <header className="section-header">
               <span className="eyebrow">Ways we can help</span>
-              <h2>Six ways Keldya ships real value — fast.</h2>
+              <h2>Three simple packages — plus custom.</h2>
               <p>
-                Every engagement below has a fixed starting price, a real
-                timeline, and a clear scope. Tell us which one matches what
-                you&apos;re trying to do, and we&apos;ll respond within one
-                business day with a tailored quote.
+                Pick the package that fits where you are. Each one has a
+                fixed starting price, a real timeline, and a clear scope —
+                and if none of them fit, the Custom Package starts with a
+                conversation and a fixed written quote.
               </p>
             </header>
 

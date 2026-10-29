@@ -34,7 +34,7 @@ interface ContactPayload {
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const PROJECT_TYPES = new Set(["web-app", "mobile", "ai-ml", "automation", "ecom", "other"]);
-const BUDGETS = new Set(["", "<10k", "10k-25k", "25k-50k", "50k+", "tbd"]);
+const BUDGETS = new Set(["", "1k-launch", "5k-business", "10k-growth", "custom", "tbd"]);
 
 function bad(message: string, status = 400) {
   return NextResponse.json({ ok: false, error: message }, { status });

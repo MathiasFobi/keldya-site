@@ -36,8 +36,10 @@ export function ServiceCard({ service }: ServiceCardProps) {
       </ul>
       <div className="service__meta">
         <div className="service__meta-row">
-          <span className="service__meta-label">Starting at</span>
-          <span className="service__price">{formatPrice(service.startsAt)}</span>
+          <span className="service__meta-label">{service.startsAt ? "Starting at" : "Pricing"}</span>
+          <span className="service__price">
+            {service.startsAt ? formatPrice(service.startsAt) : "Custom quote"}
+          </span>
         </div>
         <div className="service__meta-row">
           <span className="service__meta-label">Timeline</span>
@@ -50,7 +52,7 @@ export function ServiceCard({ service }: ServiceCardProps) {
         className="btn btn--primary service__cta"
         data-service={service.id}
       >
-        Get started
+        {service.cta ?? "Get started"}
       </a>
     </article>
   );

@@ -1,25 +1,25 @@
 /* ==========================================================================
    Keldya — Design Tokens & Global Styles
    ==========================================================================
-   Studio aesthetic: near-black background, off-white text, one accent.
+   Studio aesthetic: deep-navy background, silver-white text, one accent.
    Inspired by Linear / Vercel / Stripe — sharp, monochrome with a
-   single warm accent that signals craft.
+   single electric-blue accent sampled from the Keldya logo.
    ========================================================================== */
 
 :root {
   /* Color palette */
-  --bg:           #0a0a0b;            /* page background — near-black */
-  --bg-elevated:  #131316;            /* card / panel background */
-  --bg-subtle:    #1c1c20;            /* hover, inset */
-  --line:         #26262b;            /* hairline borders */
-  --line-strong:  #36363d;            /* hovered border */
-  --ink:          #fafaf8;            /* primary text */
-  --ink-muted:    #a8a8a6;            /* secondary text */
-  --ink-dim:      #6b6b6a;            /* tertiary text, captions */
-  --accent:       #d4a574;            /* warm amber — the one accent */
-  --accent-soft:  #b8895f;            /* accent hover state */
-  --accent-bg:    rgba(212, 165, 116, 0.10);  /* accent fill @ 10% */
-  --accent-glow:  rgba(212, 165, 116, 0.18);
+  --bg:           #040c1d;            /* page background — deep navy (logo backdrop) */
+  --bg-elevated:  #081630;            /* card / panel background */
+  --bg-subtle:    #0e2142;            /* hover, inset */
+  --line:         #1a3560;            /* hairline borders */
+  --line-strong:  #2a4f86;            /* hovered border */
+  --ink:          #f2f7ff;            /* primary text — silver-white */
+  --ink-muted:    #a8bdd6;            /* secondary text — silver-blue */
+  --ink-dim:      #6d84a3;            /* tertiary text, captions */
+  --accent:       #00a8f0;            /* electric blue — the one accent (logo K) */
+  --accent-soft:  #0b8fd6;            /* accent hover state */
+  --accent-bg:    rgba(0, 168, 240, 0.10);  /* accent fill @ 10% */
+  --accent-glow:  rgba(0, 168, 240, 0.18);
 
   /* Type scale — modular, 1.25 ratio, anchored at 16px */
   --fs-xs:    0.75rem;     /* 12px */
@@ -173,7 +173,7 @@ p  { margin: 0 0 var(--s-4); color: var(--ink-muted); }
   z-index: 50;
   backdrop-filter: saturate(150%) blur(12px);
   -webkit-backdrop-filter: saturate(150%) blur(12px);
-  background: rgba(10, 10, 11, 0.72);
+  background: rgba(4, 12, 29, 0.72);
   border-bottom: 1px solid var(--line);
 }
 .site-header__inner {
@@ -214,7 +214,7 @@ p  { margin: 0 0 var(--s-4); color: var(--ink-muted); }
   inset: 0;
   background:
     radial-gradient(ellipse 80% 50% at 50% 0%, var(--accent-glow), transparent 60%),
-    radial-gradient(ellipse 60% 40% at 80% 30%, rgba(212, 165, 116, 0.06), transparent 60%);
+    radial-gradient(ellipse 60% 40% at 80% 30%, rgba(0, 168, 240, 0.06), transparent 60%);
   pointer-events: none;
 }
 .hero__inner { position: relative; text-align: center; }
@@ -222,11 +222,11 @@ p  { margin: 0 0 var(--s-4); color: var(--ink-muted); }
   display: block;
   margin: 0 auto var(--s-6);
   width: 100%;
-  max-width: 520px;
+  max-width: 400px;
   height: auto;
   border-radius: var(--radius-lg);
-  /* Subtle gold glow that picks up the logo's own gold tones */
-  filter: drop-shadow(0 8px 24px rgba(212, 165, 116, 0.18));
+  /* Subtle blue glow that picks up the logo's own electric-blue tones */
+  filter: drop-shadow(0 8px 24px rgba(0, 168, 240, 0.18));
 }
 .hero__tagline {
   display: inline-block;
@@ -367,10 +367,10 @@ p  { margin: 0 0 var(--s-4); color: var(--ink-muted); }
   border: 1px solid var(--line);
 }
 .tag--live    { background: rgba(74, 222, 128, 0.10); color: #4ade80; border-color: rgba(74, 222, 128, 0.25); }
-.tag--dev     { background: var(--accent-bg);          color: var(--accent); border-color: rgba(212, 165, 116, 0.25); }
+.tag--dev     { background: var(--accent-bg);          color: var(--accent); border-color: rgba(0, 168, 240, 0.25); }
 .tag--partner { background: rgba(96, 165, 250, 0.10);  color: #60a5fa; border-color: rgba(96, 165, 250, 0.25); }
-.tag--archive { background: rgba(168, 168, 166, 0.08); color: var(--ink-muted); border-color: var(--line-strong); }
-.tag--soon    { background: rgba(168, 168, 166, 0.05); color: var(--ink-dim); border-color: var(--line); font-weight: 500; }
+.tag--archive { background: rgba(168, 189, 214, 0.08); color: var(--ink-muted); border-color: var(--line-strong); }
+.tag--soon    { background: rgba(168, 189, 214, 0.05); color: var(--ink-dim); border-color: var(--line); font-weight: 500; }
 .tag::before {
   content: "";
   width: 6px;
@@ -480,7 +480,7 @@ p  { margin: 0 0 var(--s-4); color: var(--ink-muted); }
   border-radius: 999px;
   border: 1px solid var(--line);
 }
-.service__badge--popular    { background: var(--accent-bg);          color: var(--accent); border-color: rgba(212, 165, 116, 0.30); }
+.service__badge--popular    { background: var(--accent-bg);          color: var(--accent); border-color: rgba(0, 168, 240, 0.30); }
 .service__badge--fast       { background: rgba(74, 222, 128, 0.08);  color: #4ade80;       border-color: rgba(74, 222, 128, 0.25); }
 .service__badge--compliance { background: rgba(96, 165, 250, 0.08);  color: #60a5fa;       border-color: rgba(96, 165, 250, 0.25); }
 
@@ -528,7 +528,7 @@ p  { margin: 0 0 var(--s-4); color: var(--ink-muted); }
   height: 14px;
   border-radius: 50%;
   background: var(--accent-bg);
-  border: 1px solid rgba(212, 165, 116, 0.35);
+  border: 1px solid rgba(0, 168, 240, 0.35);
 }
 .service__deliverables li::after {
   content: "";

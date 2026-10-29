@@ -1,19 +1,18 @@
 /**
- * Service offerings — the 6 packaged "Ways We Can Help" cards on the
- * homepage. Each is a real, shippable engagement with a starting
- * price, a list of deliverables, and a CTA that routes to the
- * contact form / Cal.com.
+ * Service offerings — the packaged "Ways We Can Help" cards on the
+ * homepage, simplified (Oct 2026) to three fixed tiers plus a custom
+ * package: $1k Launch, $5k Business, $10k Growth, and Custom.
  *
- * Prices are intentional — the user explicitly said "we can't cut
- * ourselves short on pricing" when these were proposed. These
- * numbers are realistic for a 2-person studio doing custom work
- * in weeks (not months), priced at the lower-middle of what a
- * quality US/EU studio would charge for the same scope. They are
- * "Starting at" — bigger engagements scope up.
+ * The old standalone cards are folded in, not lost:
+ *  - Nonprofit Launch Kit and Event Digital Experience scope fits
+ *    inside Launch / Business (and Custom for larger events).
+ *  - Workflow Automation Sprint and SMS Notification Setup are
+ *    Growth-tier add-ons and Custom work.
+ *  - Custom App / SaaS MVP is now the Custom Package.
  *
- * "Event Digital Experience" is the one card that overlaps with a
- * product. It's intentionally framed as a *service* powered by
- * TheMediaBox (the product) so the relationship is clear.
+ * Prices are "Starting at" — bigger engagements scope up. The Custom
+ * Package has no starting price (startsAt: null): it always starts
+ * with a conversation and a fixed written quote.
  */
 
 export interface Service {
@@ -25,50 +24,35 @@ export interface Service {
   description: string;
   /** Bulleted deliverables, shown as a small list. */
   deliverables: string[];
-  /** Starting price, in USD. Rendered with a $ prefix. */
-  startsAt: number;
-  /** "weeks" or "week" — singular for the short ones. */
+  /** Starting price, in USD. Null = custom quote (rendered as text). */
+  startsAt: number | null;
+  /** Timeline label, e.g. "1 week" or "Scoped per project". */
   duration: string;
   /** Best for — small italic line that helps the buyer self-identify. */
   bestFor: string;
   /** Badge tag rendered in the corner of the card. */
   badge: "Most popular" | "Fastest start" | "Compliance-ready" | null;
+  /** CTA button label. Defaults to "Get started" when omitted. */
+  cta?: string;
 }
 
 export const SERVICES: Service[] = [
   {
-    id: "nonprofit-launch-kit",
-    name: "Nonprofit Launch Kit",
-    tagline: "Stand up a credible, donation-ready digital presence in 1-2 weeks.",
+    id: "launch-site",
+    name: "Launch Site",
+    tagline: "A sharp one-page site that makes you look real — fast.",
     description:
-      "We design and ship the public-facing surface a new nonprofit needs on day one: a story-driven website, a working donation flow, campaign copy, email setup, and the social/SEO basics that make it findable.",
+      "Everything a new business, nonprofit, or event needs to be credible online this week: a polished one-page site, a way for people to reach you, and the basics that make you findable on Google.",
     deliverables: [
-      "Single-page or short multi-page site (Next.js, fully responsive)",
-      "Donation page wired to Stripe or your existing processor",
-      "Mission / story / team copy (you review, we revise)",
-      "Email setup (Google Workspace + branded signatures + autoresponder)",
-      "Launch checklist + 30 days of post-launch tweaks",
+      "One-page custom site (Next.js, fully responsive)",
+      "Your copy, polished — plus your logo and photos placed",
+      "Contact form + click-to-call / booking link",
+      "Basic SEO + Google Business Profile setup",
+      "Launch checklist + 14 days of post-launch tweaks",
     ],
-    startsAt: 2500,
-    duration: "1-2 weeks",
-    bestFor: "Newly formed nonprofits, foundations, and community orgs that need to look real fast.",
-    badge: "Most popular",
-  },
-  {
-    id: "workflow-automation-sprint",
-    name: "Workflow Automation Sprint",
-    tagline: "One focused week to remove the manual work eating your team's time.",
-    description:
-      "A short, scoped engagement: we map your highest-friction internal process, design the automation, build it, and hand it over with documentation. No six-month discovery phase, no platform lock-in.",
-    deliverables: [
-      "Process audit (1-2 workflows, identified + prioritized)",
-      "Working automation (Zapier / Make / n8n / custom code — your call)",
-      "Notifications, dashboards, and reporting where useful",
-      "Documentation + Loom walkthrough so your team can maintain it",
-    ],
-    startsAt: 3500,
-    duration: "1-2 weeks",
-    bestFor: "Small businesses and ops teams drowning in copy-paste, spreadsheets, and Slack pings.",
+    startsAt: 1000,
+    duration: "1 week",
+    bestFor: "New businesses, nonprofits, and events that need to look credible right now.",
     badge: "Fastest start",
   },
   {
@@ -76,7 +60,7 @@ export const SERVICES: Service[] = [
     name: "Business Website Launch",
     tagline: "A complete, customer-ready website for a business ready to grow.",
     description:
-      "The for-profit counterpart to our Nonprofit Launch Kit — a full multi-page site that turns visitors into calls, bookings, and quote requests. Built, written, and launched end to end, with lead capture wired in from day one instead of bolted on later.",
+      "A full multi-page site that turns visitors into calls, bookings, and quote requests. Built, written, and launched end to end, with lead capture wired in from day one instead of bolted on later.",
     deliverables: [
       "Multi-page custom site, up to 7 pages (Next.js, fully responsive)",
       "Lead capture wired in: contact / quote form + booking link (Cal.com or your scheduler)",
@@ -87,60 +71,43 @@ export const SERVICES: Service[] = [
     startsAt: 5000,
     duration: "2-3 weeks",
     bestFor: "Small businesses, clinics, firms, and service companies that have outgrown a DIY or one-page site.",
+    badge: "Most popular",
+  },
+  {
+    id: "growth-website",
+    name: "Growth Website",
+    tagline: "Everything in Business, plus the systems that turn visitors into revenue.",
+    description:
+      "For businesses ready to sell and follow up automatically, not just be found. Your site, payments, and one core automation ship together as one system — no duct-taping tools together later.",
+    deliverables: [
+      "Everything in Business Website Launch, up to 10 pages",
+      "Online payments or paid booking wired to Stripe",
+      "One workflow automation (lead follow-up, notifications, or CRM sync)",
+      "SMS or email notifications for new leads and orders",
+      "Analytics setup + 60 days of post-launch tweaks",
+    ],
+    startsAt: 10000,
+    duration: "3-4 weeks",
+    bestFor: "Businesses ready to take payments online and stop losing leads to slow follow-up.",
     badge: null,
   },
   {
-    id: "custom-app-mvp",
-    name: "Custom App / SaaS MVP",
-    tagline: "The first working version of the platform you've been sketching.",
+    id: "custom-package",
+    name: "Custom Package",
+    tagline: "Apps, automations, and systems built around exactly what you need.",
     description:
-      "We take an idea from one-pager to a real, deployed, multi-user application. Focused scope, tight feedback loops, weekly demos. Ship something real you can put in front of customers in 4-8 weeks.",
+      "If it doesn't fit a package, we scope it honestly. Custom apps and SaaS MVPs, workflow automations, compliant SMS systems, and event digital experiences — quoted fixed, in writing, before we start.",
     deliverables: [
-      "Architecture + data model (you own the code, repo, and infra)",
-      "Core user flows, end-to-end, with auth and a real database",
-      "Deployed to your domain (Vercel / Railway / your choice)",
-      "Stripe billing + basic admin if it's a paid product",
-      "A short, honest roadmap doc for what's next",
+      "Custom app / SaaS MVP (auth, real database, billing, admin)",
+      "Workflow automation (Zapier / Make / n8n / custom code)",
+      "Compliant SMS notification setup (A2P 10DLC handled for you)",
+      "Event digital experiences, powered by TheMediaBox",
+      "Fixed written quote + honest roadmap before build — no open-ended billing",
     ],
-    startsAt: 15000,
-    duration: "4-8 weeks",
-    bestFor: "Founders with a working concept who need a real MVP without hiring a full dev team.",
+    startsAt: null,
+    duration: "Scoped per project",
+    bestFor: "Founders and teams with a specific system to build that no package quite covers.",
     badge: null,
-  },
-  {
-    id: "event-digital-experience",
-    name: "Event Digital Experience",
-    tagline: "A printed table tent + QR guest book that captures every moment.",
-    description:
-      "Powered by our own TheMediaBox product. We design a printed table tent for your event, ship it to you, and configure a private video guest-book event with the QR code baked in. Every guest records a message from their phone; you review and approve the keepers.",
-    deliverables: [
-      "Custom table-tent design (your event, your colors, your copy)",
-      "Printed + shipped (US, 5-7 business days)",
-      "Private guest-book event on a custom URL",
-      "Host dashboard to review + approve recordings",
-      "Per-video approval billing — pay only for the keepers",
-    ],
-    startsAt: 1500,
-    duration: "2-3 weeks",
-    bestFor: "Weddings, milestone birthdays, baby showers, retirements, corporate events, memorials.",
-    badge: null,
-  },
-  {
-    id: "sms-notification-setup",
-    name: "SMS Notification Setup",
-    tagline: "A working SMS system that's actually compliant with US 10DLC rules.",
-    description:
-      "We stand up the SMS Notify product for your business: sender ID registration, A2P 10DLC campaign vetting, opt-in flow, message templates, and the delivery infrastructure. You send your first campaign the same week.",
-    deliverables: [
-      "A2P 10DLC brand + campaign registration (we handle the paperwork)",
-      "Sender ID setup + opt-in / opt-out flows",
-      "Message templates + audience segmentation",
-      "Delivery dashboard + basic analytics",
-      "Compliance check: privacy policy + terms linked where Twilio requires them",
-    ],
-    startsAt: 2500,
-    duration: "1-2 weeks",
-    bestFor: "Small businesses, member orgs, and event teams that need reliable, compliant text messaging.",
-    badge: "Compliance-ready",
+    cta: "Tell us what you're building",
   },
 ];

@@ -5,11 +5,11 @@ import { useState } from "react";
 type Status = "idle" | "sending" | "ok" | "err";
 
 const BUDGET_OPTIONS = [
-  { value: "", label: "Select a range…" },
-  { value: "<10k", label: "Under $10k" },
-  { value: "10k-25k", label: "$10k – $25k" },
-  { value: "25k-50k", label: "$25k – $50k" },
-  { value: "50k+", label: "$50k+" },
+  { value: "", label: "Select a package…" },
+  { value: "1k-launch", label: "$1,000 — Launch Site" },
+  { value: "5k-business", label: "$5,000 — Business Website Launch" },
+  { value: "10k-growth", label: "$10,000 — Growth Website" },
+  { value: "custom", label: "Custom Package" },
   { value: "tbd", label: "Not sure yet" },
 ];
 
@@ -77,7 +77,7 @@ export function ContactForm() {
         </select>
       </div>
       <div className="form-row">
-        <label htmlFor="budget">Budget range <span className="hint">(optional, helps us route fast)</span></label>
+        <label htmlFor="budget">Package <span className="hint">(optional, helps us route fast)</span></label>
         <select id="budget" name="budget" defaultValue="">
           {BUDGET_OPTIONS.map((b) => (
             <option key={b.value} value={b.value}>{b.label}</option>
