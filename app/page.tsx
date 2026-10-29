@@ -164,7 +164,7 @@ export default function HomePage() {
           <div className="container">
             <header className="section-header">
               <span className="eyebrow">Ways we can help</span>
-              <h2>Five ways Keldya ships real value — fast.</h2>
+              <h2>Six ways Keldya ships real value — fast.</h2>
               <p>
                 Every engagement below has a fixed starting price, a real
                 timeline, and a clear scope. Tell us which one matches what

@@ -1,5 +1,5 @@
 /**
- * Service offerings — the 5 packaged "Ways We Can Help" cards on the
+ * Service offerings — the 6 packaged "Ways We Can Help" cards on the
  * homepage. Each is a real, shippable engagement with a starting
  * price, a list of deliverables, and a CTA that routes to the
  * contact form / Cal.com.
@@ -70,6 +70,24 @@ export const SERVICES: Service[] = [
     duration: "1-2 weeks",
     bestFor: "Small businesses and ops teams drowning in copy-paste, spreadsheets, and Slack pings.",
     badge: "Fastest start",
+  },
+  {
+    id: "business-website-launch",
+    name: "Business Website Launch",
+    tagline: "A complete, customer-ready website for a business ready to grow.",
+    description:
+      "The for-profit counterpart to our Nonprofit Launch Kit — a full multi-page site that turns visitors into calls, bookings, and quote requests. Built, written, and launched end to end, with lead capture wired in from day one instead of bolted on later.",
+    deliverables: [
+      "Multi-page custom site, up to 7 pages (Next.js, fully responsive)",
+      "Lead capture wired in: contact / quote form + booking link (Cal.com or your scheduler)",
+      "Services and offer copy polish (you review, we revise)",
+      "Local SEO + Google Business Profile basics, analytics setup",
+      "Launch checklist + 30 days of post-launch tweaks",
+    ],
+    startsAt: 5000,
+    duration: "2-3 weeks",
+    bestFor: "Small businesses, clinics, firms, and service companies that have outgrown a DIY or one-page site.",
+    badge: null,
   },
   {
     id: "custom-app-mvp",
