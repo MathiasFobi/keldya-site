@@ -71,13 +71,13 @@ export default function HomePage() {
         <section className="hero">
           <div className="container hero__inner">
             <Image
-              src="/keldya-logo.jpg"
-              alt="Keldya LLC — Global Culture, Integrated Futures"
+              src="/keldya-founders.webp"
+              alt="Mathias and Dominic Fobi, the Keldya founders"
               width={1179}
-              height={1179}
+              height={924}
               priority
-              sizes="(max-width: 900px) 80vw, 400px"
-              className="hero__logo"
+              sizes="(max-width: 900px) 92vw, 680px"
+              className="hero__founders"
             />
             <p className="hero__tagline">Global Culture · Integrated Futures</p>
             <h1 className="hero__title">

@@ -218,15 +218,15 @@ p  { margin: 0 0 var(--s-4); color: var(--ink-muted); }
   pointer-events: none;
 }
 .hero__inner { position: relative; text-align: center; }
-.hero__logo {
+.hero__founders {
   display: block;
   margin: 0 auto var(--s-6);
   width: 100%;
-  max-width: 400px;
+  max-width: 680px;
   height: auto;
-  border-radius: var(--radius-lg);
-  /* Subtle blue glow that picks up the logo's own electric-blue tones */
-  filter: drop-shadow(0 8px 24px rgba(0, 168, 240, 0.18));
+  /* Transparent founders cutout — the drop shadow follows the silhouettes,
+     so no border-radius / box background: it has to float on the navy. */
+  filter: drop-shadow(0 16px 36px rgba(0, 90, 180, 0.35));
 }
 .hero__tagline {
   display: inline-block;
@@ -687,7 +687,7 @@ p  { margin: 0 0 var(--s-4); color: var(--ink-muted); }
   h2 { font-size: var(--fs-2xl); }
   .section { padding: var(--s-16) 0; }
   .hero { padding: var(--s-20) 0 var(--s-16); }
-  .hero__logo { max-width: 360px; }
+  .hero__founders { max-width: 560px; }
   .brand__logo { height: 32px; }
   .service__head { padding-right: 0; }
   .service__badge { position: static; display: inline-block; margin-bottom: var(--s-3); }
