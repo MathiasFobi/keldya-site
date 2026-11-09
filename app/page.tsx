@@ -1,43 +1,10 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ContactForm } from "./_components/contact-form";
-import { Pillar } from "./_components/pillar";
+import { ProjectCard } from "./_components/project-card";
 import { ServiceCard } from "./_components/service-card";
 import { SERVICES } from "./_data/services";
-
-/** Single source of truth for the 5 pillars. Edit here, propagates everywhere. */
-const PILLARS = [
-  {
-    name: "TheMediaBox",
-    description:
-      "QR-enabled event media platforms. Video guest books, print-on-demand table tents, and a B2C storefront — built to capture every guest's moment at the venue and beyond.",
-    // No href — coming soon, no custom domain yet
-    status: { kind: "soon" as const, label: "Coming soon" },
-  },
-  {
-    name: "SMS Notify",
-    description:
-      "High-reliability SMS notification SaaS for business-to-customer communications. Real-time delivery, sender ID management, and bulk-send workflows at production scale.",
-    // No href — coming soon, no custom domain yet
-    status: { kind: "soon" as const, label: "Coming soon" },
-  },
-  {
-    name: "Dominica Mental Health Foundation",
-    description:
-      "Proudly operating and scaling the digital infrastructure for vital global mental-health advocacy. A 501(c)(3) committed to dementia care, caregiver support, and geriatric services in Cameroon.",
-    href: "https://dominicamentalhealthfoundation.org",
-    external: true,
-    status: { kind: "partner" as const, label: "Impact partner" },
-  },
-  {
-    name: "Dr. Mal Fobi Tribute",
-    description:
-      "High-fidelity digital storytelling and architectural-scale tribute curation. A memorial archive built with the same craft we bring to our commercial work.",
-    href: "https://www.drmalfobi.com",
-    external: true,
-    status: { kind: "archive" as const, label: "Featured archive" },
-  },
-] as const;
+import { PROJECTS } from "./_data/projects";
 
 export default function HomePage() {
   return (
@@ -74,7 +41,7 @@ export default function HomePage() {
               src="/keldya-founders.webp"
               alt="Mathias and Dominic Fobi, the Keldya founders"
               width={1179}
-              height={924}
+              height={947}
               priority
               sizes="(max-width: 900px) 92vw, 680px"
               className="hero__founders"
@@ -113,30 +80,6 @@ export default function HomePage() {
         <section id="story" className="section">
           <div className="container">
             <div className="story">
-              <div className="story__visual" aria-label="Mathias and Dominic Fobi, co-founders of Keldya">
-                <div className="story__visual-grid">
-                  <div className="story__visual-tile story__visual-tile--photo">
-                    <Image
-                      src="/founders/mathias.jpg"
-                      alt="Mathias Fobi, co-founder of Keldya, photographed on a university campus in a black jacket and light blue polo"
-                      fill
-                      sizes="(max-width: 900px) 50vw, 280px"
-                      style={{ objectFit: "cover", objectPosition: "center top" }}
-                    />
-                    <span className="name">Mathias Fobi</span>
-                  </div>
-                  <div className="story__visual-tile story__visual-tile--photo">
-                    <Image
-                      src="/founders/dominic.jpg"
-                      alt="Dominic Fobi, co-founder of Keldya, photographed in a navy double-breasted suit with a red lapel pin and gold accents, smiling warmly"
-                      fill
-                      sizes="(max-width: 900px) 50vw, 280px"
-                      style={{ objectFit: "cover", objectPosition: "center top" }}
-                    />
-                    <span className="name">Dominic Fobi</span>
-                  </div>
-                </div>
-              </div>
               <div className="story__copy">
                 <span className="eyebrow">Our story</span>
                 <h2 className="story__title">Two women built us. We build for everyone else.</h2>
@@ -185,18 +128,18 @@ export default function HomePage() {
         <section id="work" className="section">
           <div className="container">
             <header className="section-header">
-              <span className="eyebrow">The Ecosystem</span>
-              <h2>What we build, in production and in the lab.</h2>
+              <span className="eyebrow">Selected work</span>
+              <h2>Current projects, live in the wild.</h2>
               <p>
-                Four properties shipped, one in active development, and an AI
-                audio engine being prototyped in the margins. Every property
-                is built by us, end to end, in days to weeks — not months.
+                Real sites and platforms we&apos;ve designed, built, and
+                deployed — for clients, partners, and our own studio. Every
+                card links to the live build.
               </p>
             </header>
 
-            <div className="pillars">
-              {PILLARS.map((p) => (
-                <Pillar key={p.name} {...p} />
+            <div className="projects">
+              {PROJECTS.map((p) => (
+                <ProjectCard key={p.slug} project={p} />
               ))}
             </div>
 
