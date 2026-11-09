@@ -22,15 +22,6 @@ export const PROJECTS: Project[] = [
     tags: ["Web app", "Member portal", "Client"],
   },
   {
-    slug: "nfonsam",
-    name: "Nfonsam Group Holdings",
-    description:
-      "Corporate site for an international holding company spanning the US, UAE, and Cameroon — a planned ~100-bed hospital system, a diaspora family-care program, and medical procurement, presented across eight pages.",
-    href: "https://nfonsam-group-holdings.vercel.app",
-    linkLabel: "Visit the site",
-    tags: ["Corporate website", "Client"],
-  },
-  {
     slug: "fobicam",
     name: "FobiCam",
     description:
@@ -40,15 +31,6 @@ export const PROJECTS: Project[] = [
     tags: ["Business website", "Photography", "Studio"],
   },
   {
-    slug: "themediabox",
-    name: "TheMediaBox",
-    description:
-      "Personalized keepsakes for Black celebrations — photo services and a QR-code video guest book that lets every guest at the event record a message for the host.",
-    href: "https://themediabox-guestbook.fobimathias.workers.dev",
-    linkLabel: "Try the live guest book",
-    tags: ["E-commerce", "Event media", "Studio"],
-  },
-  {
     slug: "drmalfobi",
     name: "Dr. Mal Fobi Tribute",
     description:
@@ -56,5 +38,14 @@ export const PROJECTS: Project[] = [
     href: "https://www.drmalfobi.com",
     linkLabel: "Visit the tribute",
     tags: ["Memorial", "Storytelling"],
+  },
+  {
+    slug: "dominica",
+    name: "Dominica Mental Health Foundation",
+    description:
+      "Digital home for a 501(c)(3) advancing awareness, dignity, and care for people living with dementia — supporting caregivers, families, and older adults in Cameroon and underserved communities, in honor of Mami Dominica Nkie.",
+    href: "https://dominicamentalhealthfoundation.org",
+    linkLabel: "Visit the foundation",
+    tags: ["Nonprofit", "Impact partner"],
   },
 ];
